@@ -1,0 +1,91 @@
+.navbar {
+  width: 100%;
+  height: 100px;
+  background-color: #3e497a;
+  display: flex;
+  flex-direction: column;
+ padding: 1rem;
+}
+
+.Links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  flex-direction: row;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  margin: 0 20px;
+  font-size: 25px;
+}
+
+.toggleButton {
+  display: none;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100px;
+  padding: 0 20px;
+}
+
+.toggleButton svg {
+  font-size: 50px;
+}
+
+.toggleButton button {
+  background-color: transparent;
+  border: none;
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+
+/* Toggle logic */
+#open {
+  height: 100vh;
+  transition: height 0.3s ease-in-out;
+}
+
+#open .Links {
+  flex-direction: column;
+  justify-content: flex-start;
+  margin-top: 100px;
+}
+
+#open a {
+  width: 100%;
+  text-align: center;
+  padding: 15px 0;
+  border-bottom: 1px solid #ffffff22;
+}
+
+#close .Links {
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .toggleButton {
+    display: flex;
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .toggleButton {
+    display: none;
+  }
+
+  #open,
+  #close {
+    height: 100px;
+  }
+
+  #open .Links {
+    flex-direction: row;
+    margin-top: 0;
+  }
+
+  #close .Links {
+    display: flex;
+  }
+}
